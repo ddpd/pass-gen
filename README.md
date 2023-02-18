@@ -1,1 +1,1 @@
-[Website](https://github.com/Kubaplay07/pass-gen/)
+[Website](https://kubaplay07.github.io/pass-gen//)
