@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/src/img/icons/1key.png">
+    <script async defer data-website-id="f4f8e51b-1b56-4758-b05c-3c48d5b17727" src="https://umami.kubab.xyz/umami.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/src/img/icons/1key.png" alt="Website Logo">
+        <h1>Pass Gen</h1>
+      </div>
+    </header>
+    <div class="password-generator">
+      <h2>Generate a Strong Password</h2>
+      <div class="password-length">
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" name="length" min="1" max="100" value="12">
+      </div>
+      <div class="character-types">
+        <label for="uppercase">Uppercase Letters</label>
+        <input type="checkbox" id="uppercase" name="uppercase" checked>
+        <label for="lowercase">Lowercase Letters</label>
+        <input type="checkbox" id="lowercase" name="lowercase" checked>
+        <label for="numbers">Numbers</label>
+        <input type="checkbox" id="numbers" name="numbers" checked>
+        <label for="symbols">Symbols</label>
+        <input type="checkbox" id="symbols" name="symbols" checked>
+      </div>
+      <div class="password-display"></div>
+      <div class="buttons">
+        <button id="generate">Generate Password</button>
+        <button id="copy">Copy Password</button>
+      </div>
+    </div>
+    <footer>&copy; 2023 Pass Gen. All rights reserved.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
