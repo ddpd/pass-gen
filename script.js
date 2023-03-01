@@ -72,6 +72,14 @@ symbolsEl.addEventListener('change', () => {
 });
 
 
+window.addEventListener('load', () => {
+  updatePassword();
+});
+
+
+
+
+
 
 
 copyEl.addEventListener('click', () => {
