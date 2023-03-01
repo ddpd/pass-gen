@@ -1,6 +1,6 @@
 {
   "title": "Advanced Password Generator",
-  "pass_gen": "Password Gen",
+  "pass_gen": "Password Generator",
   "gen_strong-pass-heading": "Generate a Strong Password",
   "lenghtLabel": "Password Length:",
   "uppercaseLabel": "Uppercase Letters",
