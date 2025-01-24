@@ -1,4 +1,4 @@
-<!-- # [NEW](https://github.com/ddpd/Tools-website)fff -->
+<!-- # [NEW](https://github.com/ddpd/Tools-website) -->
 <!-- # [kubab](https://pass-gen.kubab.xyz) -->
 <!-- # [kubab](https://password-generator.kubab.xyz) -->
 
