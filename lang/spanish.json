@@ -2,7 +2,7 @@
     "title": "Generador de contraseñas avanzado",
     "pass_gen": "Generador de contraseñas",
     "gen_strong-pass-heading": "Generar una contraseña segura",
-    "lenghtLabel": "Longitud de la contraseña:",
+    "lengthLabel": "Longitud de la contraseña:",
     "uppercaseLabel": "Letras mayúsculas",
     "lowercaseLabel": "Letras minúsculas",
     "numbersLabel": "Números",

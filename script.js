@@ -12,28 +12,24 @@ const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const numbers = '0123456789';
 const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>/?';
 
+function getRandomChar(list) {
+  const buffer = new Uint32Array(1);
+  window.crypto.getRandomValues(buffer);
+  return list[buffer[0] % list.length];
+}
+
 function generatePassword() {
   let password = '';
   const characterList = [];
-  if (uppercaseEl.checked) {
-    characterList.push(...uppercaseLetters);
+  if (uppercaseEl.checked) characterList.push(...uppercaseLetters);
+  if (lowercaseEl.checked) characterList.push(...lowercaseLetters);
+  if (numbersEl.checked) characterList.push(...numbers);
+  if (symbolsEl.checked) characterList.push(...symbols);
+
+  for (let i = 0; i < lengthEl.value; i++) {
+    password += getRandomChar(characterList);
   }
-  if (lowercaseEl.checked) {
-    characterList.push(...lowercaseLetters);
-  }
-  if (numbersEl.checked) {
-    characterList.push(...numbers);
-  }
-  if (symbolsEl.checked) {
-    characterList.push(...symbols);
-  }
-  const maxLength = Math.min(lengthEl.value, 100);
-  for (let i = 0; i < maxLength; i++) {
-    password += characterList[Math.floor(Math.random() * characterList.length)];
-  }
-  if (characterList.length === 0) {
-    password = '';
-  }
+
   return password;
 }
 
@@ -42,53 +38,33 @@ function updatePassword() {
   passwordEl.innerText = password;
 }
 
-function onLoad() {
-  updatePassword();
+let timeout;
+function scheduleUpdate() {
+  clearTimeout(timeout);
+  timeout = setTimeout(updatePassword, 300);
 }
 
-generateEl.addEventListener('click', () => {
-  updatePassword();
-});
+generateEl.addEventListener('click', updatePassword);
+lengthEl.addEventListener('input', scheduleUpdate);
+uppercaseEl.addEventListener('change', scheduleUpdate);
+lowercaseEl.addEventListener('change', scheduleUpdate);
+numbersEl.addEventListener('change', scheduleUpdate);
+symbolsEl.addEventListener('change', scheduleUpdate);
 
-lengthEl.addEventListener('input', () => {
-  lengthEl.value = Math.min(lengthEl.value, 100); // limit max length to 100
-  updatePassword();
-});
-
-uppercaseEl.addEventListener('change', () => {
-  updatePassword();
-});
-
-lowercaseEl.addEventListener('change', () => {
-  updatePassword();
-});
-
-numbersEl.addEventListener('change', () => {
-  updatePassword();
-});
-
-symbolsEl.addEventListener('change', () => {
-  updatePassword();
-});
-
-
-window.addEventListener('load', () => {
-  updatePassword();
-});
-
-
-
-
-
-
-
-copyEl.addEventListener('click', () => {
-    const password = passwordEl.innerText;
-    if (password) {
-      navigator.clipboard.writeText(password);
-      copyEl.innerText = 'Password Copied!';
+copyEl.addEventListener('click', async () => {
+  const password = passwordEl.innerText;
+  if (password) {
+    try {
+      await navigator.clipboard.writeText(password);
+      const originalText = copyEl.innerText;
+      copyEl.innerText = '✔️ ' + originalText;
       setTimeout(() => {
-        copyEl.innerText = 'Copy Password';
+        copyEl.innerText = originalText;
       }, 2000);
+    } catch {
+      alert(copyEl.innerText + ' FAILED');
     }
-  });
+  }
+});
+
+updatePassword();

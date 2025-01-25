@@ -1,49 +1,33 @@
-$(document).ready(function() {
-	// Default language
-	loadLanguage('en');
+$(document).ready(function () {
+  const langSelect = $('#language-select');
+  let language = localStorage.getItem('selectedLanguage') || 'english';
 
-	// Listen for language change events
-	$('#language-select').change(function() {
-		var language = $(this).val();
-		loadLanguage(language);
-	});
-});
+  langSelect.val(language);
 
-
-//OLD
-// function loadLanguage(language) {
-// 	// Load language data from JSON file
-// 	$.getJSON('lang/' + language + '.json', function(data) {
-// 		// Update page content
-// 		$('#heading').text(data.heading);
-// 		$('#content').text(data.content);
-//      $('#pass-gen').text(data.pass_gen);
-// 	});
-// }
-
-
-
-// Langauges selector
-$(document).ready(function() {
-    const langSelect = $('#language-select');
-    let language = langSelect.val();
-  
-    // load language after language-select
-    langSelect.change(function() {
-      language = $(this).val();
-      loadLanguage();
-    });
-  
-    // language loading
-    function loadLanguage() {
-      $.getJSON(`lang/${language}.json`, function(data) {
-        for (const key in data) {
-          $(`#${key}`).text(data[key]);
-        }
-      });
-    }
-  
-    // When Website Loading
+  langSelect.change(function () {
+    language = $(this).val();
     loadLanguage();
+    localStorage.setItem('selectedLanguage', language);
   });
-  
+
+  function loadLanguage() {
+    const fallback = 'english';
+
+    $.getJSON(`lang/${language}.json`)
+      .fail(() => {
+        console.warn(`Language ${language} not found, loading fallback`);
+        language = fallback;
+        return $.getJSON(`lang/${fallback}.json`);
+      })
+      .done((data) => {
+        Object.keys(data).forEach(key => {
+          $(`#${key}`).text(data[key]);
+        });
+      })
+      .fail(() => {
+        alert('Error loading language files');
+      });
+  }
+
+  loadLanguage();
+});

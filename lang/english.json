@@ -2,29 +2,12 @@
   "title": "Advanced Password Generator",
   "pass_gen": "Password Generator",
   "gen_strong-pass-heading": "Generate a Strong Password",
-  "lenghtLabel": "Password Length:",
+  "lengthLabel": "Password Length:",
   "uppercaseLabel": "Uppercase Letters",
   "lowercaseLabel": "Lowercase Letters",
   "numbersLabel": "Numbers",
   "symbolsLabel": "Symbols",
   "copy": "Copy Password",
-  "generate": "Generate Password ",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "generate": "Generate Password",
   "rights_reserved": "\u00A9 2023 Password Gen. All rights reserved."
-
-
 }

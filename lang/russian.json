@@ -2,7 +2,7 @@
     "title": "Расширенный генератор паролей",
     "pass_gen": "Генератор паролей",
     "gen_strong-pass-heading": "Создать надежный пароль",
-    "lenghtLabel": "Длина пароля:",
+    "lengthLabel": "Длина пароля:",
     "uppercaseLabel": "Заглавные буквы",
     "lowercaseLabel": "Прописные буквы",
     "numbersLabel": "Цифры",
