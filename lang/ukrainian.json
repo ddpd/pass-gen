@@ -2,7 +2,7 @@
     "title": "Розширений генератор паролів",
     "pass_gen": "Генератор паролів",
     "gen_strong-pass-heading": "Створення міцного пароля",
-    "lenghtLabel": "Довжина пароля:",
+    "lengthLabel": "Довжина пароля:",
     "uppercaseLabel": "Великі літери",
     "lowercaseLabel": "Малі літери",
     "numbersLabel": "Цифри",

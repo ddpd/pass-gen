@@ -2,7 +2,7 @@
   "title": "Zaawansowany Generator Hasła",
   "pass_gen": "Generator Haseł",
   "gen_strong-pass-heading": "Wygeneruj silne hasło",
-  "lenghtLabel": "Długość hasła:",
+  "lengthLabel": "Długość hasła:",
   "uppercaseLabel": "Wielkie litery",
   "lowercaseLabel": "Małe litery",
   "numbersLabel": "Cyfry",

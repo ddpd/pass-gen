@@ -2,7 +2,7 @@
     "title": "Erweiterter Passwort-Generator",
     "pass_gen": "Passwort-Generator",
     "gen_strong-pass-heading": "Generieren Sie ein sicheres Passwort",
-    "lenghtLabel": "Passwortlänge:",
+    "lengthLabel": "Passwortlänge:",
     "uppercaseLabel": "Großbuchstaben",
     "lowercaseLabel": "Kleinbuchstaben",
     "numbersLabel": "Zahlen",
