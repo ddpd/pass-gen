@@ -58,10 +58,7 @@ A secure and user-friendly password generator with multi-language support, desig
    The generator will now work correctly with all features.
 
 ## Contributing
-🔓 Full contribution guidelines can be found in `CONTRIBUTING.md`.
+🔓 Full contribution guidelines can be found in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 Advanced Password Generator © 2023-2025
-
-Built with vanilla JavaScript, jQuery, and CSS.
-
